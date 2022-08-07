@@ -6,7 +6,7 @@ It comes with role-based user authentication and admin panel. For dummy member a
 
 Techs used in this package:
 
-- Laravel 8
+- Laravel 9
 - Laravel Fortify
 - Admin LTE
 - Bootstrap 5
