@@ -86,7 +86,7 @@ class SettingsController extends Controller
 
     public function updateBlacklist(Request $request)
     {
-        if(is_null('blacklisted_domains'))
+        if(is_null($request->blacklisted_domains))
         {
             BlacklistedDomain::truncate();
         }
@@ -107,7 +107,7 @@ class SettingsController extends Controller
             }
         }
 
-        if(is_null('blacklisted_emails'))
+        if(is_null($request->blacklisted_emails))
         {
             BlacklistedEmail::truncate();
         }
