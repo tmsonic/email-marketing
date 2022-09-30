@@ -15,13 +15,13 @@ class GetresponseHelper
             return false;
         }
 
-        if(is_null($getresponseConfig->api_key))
+        if(empty($getresponseConfig->api_key))
         {
             $errorMsg = __('email-marketing.gr_api_not_found');
             return false;
         }
 
-        if(is_null($getresponseConfig->list_token))
+        if(empty($getresponseConfig->list_token))
         {
             $errorMsg = __('email-marketing.gr_list_token_not_found');
             return false;

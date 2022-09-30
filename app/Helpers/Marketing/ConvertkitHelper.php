@@ -15,13 +15,13 @@ class ConvertkitHelper
             return false;
         }
 
-        if(is_null($convertkitConfig->api_key))
+        if(empty($convertkitConfig->api_key))
         {
             $errorMsg = __('email-marketing.ckit_api_not_found');
             return false;
         }
 
-        if(is_null($convertkitConfig->sequence_id))
+        if(empty($convertkitConfig->sequence_id))
         {
             $errorMsg = __('email-marketing.ckit_sequence_id_not_found');
             return false;

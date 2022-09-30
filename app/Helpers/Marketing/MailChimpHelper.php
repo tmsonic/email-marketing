@@ -16,19 +16,19 @@ class MailChimpHelper
             return false;
         }
 
-        if(is_null($mailchimpConfig->api_key))
+        if(empty($mailchimpConfig->api_key)) // changed from is_null($mailchimpConfig->api_key)
         {
             $errorMsg = __('email-marketing.mc_api_not_found');
             return false;
         }
 
-        if(is_null($mailchimpConfig->list_id))
+        if(empty($mailchimpConfig->list_id)) // changed from is_null($mailchimpConfig->list_id)
         {
             $errorMsg = __('email-marketing.mc_list_id_not_found');
             return false;
         }
 
-        if(is_null($mailchimpConfig->server_prefix))
+        if(empty($mailchimpConfig->server_prefix)) // changed from is_null($mailchimpConfig->server_prefix)
         {
             $errorMsg = __('email-marketing.mc_server_prefix_not_found');
             return false;

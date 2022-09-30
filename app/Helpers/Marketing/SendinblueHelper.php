@@ -16,13 +16,13 @@ class SendinblueHelper
             return false;
         }
 
-        if(is_null($sendinblueConfig->api_key))
+        if(empty($sendinblueConfig->api_key))
         {
             $errorMsg = __('email-marketing.sb_api_not_found');
             return false;
         }
 
-        if(is_null($sendinblueConfig->list_id))
+        if(empty($sendinblueConfig->list_id))
         {
             $errorMsg = __('email-marketing.sb_list_id_not_found');
             return false;
