@@ -4,13 +4,11 @@ namespace App\Helpers\Marketing;
 
 use DB;
 use Exception;
-use Log;
 
 class SendyHelper
 {
     public static function subscribeSendyList($name, $email, &$errorMsg)
     {
-        Log::info('subscribeSendyList');
         $sendyConfig = DB::table('sendy_configs')->first();
         if(is_null($sendyConfig))
         {
@@ -20,18 +18,17 @@ class SendyHelper
 
         if(empty($sendyConfig->api_key))
         {
-            Log::info('sendy api key is null');
             $errorMsg = __('email-marketing.sendy_api_not_found');
             return false;
         }
 
-        if(is_null($sendyConfig->list_id))
+        if(empty($sendyConfig->list_id))
         {
             $errorMsg = __('email-marketing.sendy_list_id_not_found');
             return false;
         }
 
-        if(is_null($sendyConfig->install_url))
+        if(empty($sendyConfig->install_url))
         {
             $errorMsg = __('email-marketing.sendy_install_url_not_found');
             return false;
