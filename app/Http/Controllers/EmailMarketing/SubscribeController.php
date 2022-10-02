@@ -38,7 +38,7 @@ class SubscribeController extends Controller
 
         $settings = DB::table('settings')->first();
         $provider = $settings->marketing_provider;
-        if(is_null($provider))
+        if(empty($provider)) //previoulsy is_null($provider)
         {
             return json_encode(array('error' =>  __('email-marketing.provider_not_set')));
         }
